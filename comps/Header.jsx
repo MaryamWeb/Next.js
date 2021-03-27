@@ -7,6 +7,9 @@ const Header=()=>{
             <li className="nav-item">
             <Link href="/" ><a className="nav-link text-white">Home</a></Link>
             </li>
+            <li className="nav-item">
+            <Link href="/About" ><a className="nav-link text-white">About</a></Link>
+            </li>
         </ul>
     </nav>   
     )

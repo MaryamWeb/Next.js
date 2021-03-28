@@ -10,6 +10,9 @@ const Header=()=>{
             <li className="nav-item">
             <Link href="/About" ><a className="nav-link text-white">About</a></Link>
             </li>
+            <li className="nav-item">
+            <Link href="/users" ><a className="nav-link text-white">All Users</a></Link>
+            </li>
         </ul>
     </nav>   
     )

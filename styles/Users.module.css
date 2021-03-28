@@ -1,0 +1,6 @@
+.listItem {
+	cursor: pointer;
+}
+.listItem:nth-child(odd) {
+	background-color: rgba(238, 153, 119, 0.623);
+}

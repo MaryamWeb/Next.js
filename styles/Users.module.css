@@ -1,6 +1,11 @@
 .listItem {
 	cursor: pointer;
+	background-color: #e5ecf8;
 }
-.listItem:nth-child(odd) {
-	background-color: rgba(238, 153, 119, 0.623);
+
+.listItem:hover {
+	background-color: var(--main-color);
+}
+.headerTitle {
+	color: #80a2f1;
 }

@@ -1,3 +1,6 @@
+import Head from 'next/head';
+import Styles from '../../styles/Users.module.css'
+
 export const getStaticPaths = async()=>{
     const res = await fetch('https://jsonplaceholder.typicode.com/users')
     const data = await res.json()
@@ -9,18 +12,24 @@ export const getStaticPaths = async()=>{
         fallback:false
     }
 }
+
 export const getStaticProps = async(context)=>{
     const id = context.params.id;
     const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
     const data = await res.json();
     return{props:{user:data}}
 }
+
 const Details=({user})=>{
     return(
+      <>
+        <Head>
+          <title>User</title>
+        </Head>
         <div className="container">
           <div className="row">
             <div className="col-6">
-              <h4>Personal Information</h4>
+              <h2 className={`${Styles.headerTitle}`}>Personal Information</h2>
               <table className="table">
                 <tbody>
                   <tr>
@@ -43,7 +52,7 @@ const Details=({user})=>{
               </table>
             </div>
             <div className="col-6">
-              <h2>Address</h2>
+              <h2 className={`${Styles.headerTitle}`}>Address</h2>
               <table className="table">
                 <tbody>
                   <tr>
@@ -66,9 +75,8 @@ const Details=({user})=>{
               </table>
             </div>
           </div>
-          
         <div className="col-6">
-          <h2>Company</h2>
+          <h2 className={`${Styles.headerTitle}`}>Company</h2>
           <table className="table">
             <tbody>
               <tr>
@@ -87,6 +95,7 @@ const Details=({user})=>{
           </table>
         </div>
         </div>
+      </>
     )
 }
 
